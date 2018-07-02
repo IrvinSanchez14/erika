@@ -1,12 +1,19 @@
 $(document).ready(function() {
 
   var fondo = new Audio('boy-sound/FONDO.mp3');
-  var boton = new Audio('boy-sound/boton.m4a')
+  var boton = new Audio('boy-sound/boton.m4a');
 
-  //FondoPlay();
+
+  FondoPlay();
   welcomeButtonAn();
   alumnButtonAn();
   addAlumnButtonAn();
+  menu1Anmination();
+  menu2Anmination();
+  menu3Anmination();
+  menu4Anmination();
+  menu5Anmination();
+  menu6Anmination();
 
   function FondoPlay(){
     fondo.addEventListener('ended', function() {
@@ -57,6 +64,84 @@ $(document).ready(function() {
     });
   }
 
+  function menu1Anmination() {
+    $('#menu1').hover(function() {
+      $('svg').find('#menu1').stop()
+      .animate({'stroke-dashoffset': 0}, 1000)
+      .css({'fill': '#ae8a10', 'transition': 'fill 0.5s'});
+      console.log('on');
+    }, function() {
+      $('svg').find('#menu1').stop()
+      .animate({'stroke-dashoffset': 900}, 1000)
+      .css({'fill': '#EFCA4F', 'transition': 'fill 0.5s'});
+    });
+  }
+
+  function menu2Anmination() {
+    $('#menu2').hover(function() {
+      $('svg').find('#menu2').stop()
+      .animate({'stroke-dashoffset': 0}, 1000)
+      .css({'fill': '#ae8a10', 'transition': 'fill 0.5s'});
+      console.log('on');
+    }, function() {
+      $('svg').find('#menu2').stop()
+      .animate({'stroke-dashoffset': 900}, 1000)
+      .css({'fill': '#EFCA4F', 'transition': 'fill 0.5s'});
+    });
+  }
+
+  function menu3Anmination() {
+    $('#menu3').hover(function() {
+      $('svg').find('#menu3').stop()
+      .animate({'stroke-dashoffset': 0}, 1000)
+      .css({'fill': '#ae8a10', 'transition': 'fill 0.5s'});
+      console.log('on');
+    }, function() {
+      $('svg').find('#menu3').stop()
+      .animate({'stroke-dashoffset': 900}, 1000)
+      .css({'fill': '#EFCA4F', 'transition': 'fill 0.5s'});
+    });
+  }
+
+  function menu4Anmination() {
+    $('#menu4').hover(function() {
+      $('svg').find('#menu4').stop()
+      .animate({'stroke-dashoffset': 0}, 1000)
+      .css({'fill': '#ae8a10', 'transition': 'fill 0.5s'});
+      console.log('on');
+    }, function() {
+      $('svg').find('#menu4').stop()
+      .animate({'stroke-dashoffset': 900}, 1000)
+      .css({'fill': '#EFCA4F', 'transition': 'fill 0.5s'});
+    });
+  }
+
+  function menu5Anmination() {
+    $('#menu5').hover(function() {
+      $('svg').find('#menu5').stop()
+      .animate({'stroke-dashoffset': 0}, 1000)
+      .css({'fill': '#ae8a10', 'transition': 'fill 0.5s'});
+      console.log('on');
+    }, function() {
+      $('svg').find('#menu5').stop()
+      .animate({'stroke-dashoffset': 900}, 1000)
+      .css({'fill': '#EFCA4F', 'transition': 'fill 0.5s'});
+    });
+  }
+
+  function menu6Anmination() {
+    $('#menu6').hover(function() {
+      $('svg').find('#menu6').stop()
+      .animate({'stroke-dashoffset': 0}, 1000)
+      .css({'fill': '#ae8a10', 'transition': 'fill 0.5s'});
+      console.log('on');
+    }, function() {
+      $('svg').find('#menu6').stop()
+      .animate({'stroke-dashoffset': 900}, 1000)
+      .css({'fill': '#EFCA4F', 'transition': 'fill 0.5s'});
+    });
+  }
+
 
   $( "#welcome-button" ).click(function() {
     boton.play();
@@ -79,12 +164,55 @@ $(document).ready(function() {
     }, 1000);
   });
 
-  $("#menu-config").click(function(){
+  $(".menu-config").click(function(){
     boton.play();
     setTimeout(function() {
       location.href = 'menuDesp.html';
     }, 1000);
   });
+
+  $("#menu1").click(function(){
+    boton.play();
+    setTimeout(function() {
+      location.href = 'alumnos.html';
+    }, 500);
+  });
+
+  $("#menu2").click(function(){
+    boton.play();
+    setTimeout(function() {
+      location.href = 'sesiones.html';
+    }, 500);
+  });
+
+  $("#menu3").click(function(){
+    boton.play();
+    setTimeout(function() {
+      location.href = 'premios.html';
+    }, 500);
+  });
+
+  $("#menu4").click(function(){
+    boton.play();
+    setTimeout(function() {
+      location.href = 'profesional.html';
+    }, 500);
+  });
+
+  $("#menu5").click(function(){
+    boton.play();
+    setTimeout(function() {
+      location.href = 'configuracionG.html';
+    }, 500);
+  });
+
+  $("#menu6").click(function(){
+    boton.play();
+    setTimeout(function() {
+      location.href = 'recordatorios.html';
+    }, 500);
+  });
+
 
   $("#lavar-dientes").click(function(){
     boton.play();
