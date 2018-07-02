@@ -93,4 +93,210 @@ $(document).ready(function() {
     }, 1000);
   });
 
+  $("#femenino").click(function(){
+    boton.play();
+    setTimeout(function() {
+      location.href = 'macha/index.html';
+    }, 1000);
+  });
+
+  $("#masculino").click(function(){
+    boton.play();
+    setTimeout(function() {
+      location.href = 'macho/index.html';
+    }, 1000);
+  });
+
+
+  SVGElement.prototype.getTransformToElement =
+  SVGElement.prototype.getTransformToElement ||
+  function(toElement) {
+    return toElement
+      .getScreenCTM()
+      .inverse()
+      .multiply(this.getScreenCTM());
+  };
+
+var svg = null;
+var rect1 = null;
+var rect2 = null;
+var rect3 = null;
+var dot1 = null;
+var dot2 = null;
+
+  /*$("#pan1").click(function(){
+    do8();
+  });
+
+  $("#lechuga").click(function(){
+    do9();
+  });*/
+
+  Draggable.create("#salami1", {
+    type:"x,y",
+    bounds:"#container",
+    overshootTolerance:0,
+    throwProps:true
+  })
+
+  Draggable.create("#lechuga", {
+    type:"x,y",
+    bounds:"#container",
+    overshootTolerance:0,
+    throwProps:true
+  })
+
+  Draggable.create("#pan1", {
+    type:"x,y",
+    bounds:"#container",
+    overshootTolerance:0,
+    throwProps:true
+  })
+
+  Draggable.create("#salami2", {
+    type:"x,y",
+    bounds:"#container",
+    overshootTolerance:0,
+    throwProps:true
+  })
+
+  Draggable.create("#queso", {
+    type:"x,y",
+    bounds:"#container",
+    overshootTolerance:0,
+    throwProps:true
+  })
+
+  Draggable.create("#salamiG", {
+    type:"x,y",
+    bounds:"#container",
+    overshootTolerance:0,
+    throwProps:true
+  })
+
+  Draggable.create("#pan2", {
+    type:"x,y",
+    bounds:"#container",
+    overshootTolerance:0,
+    throwProps:true
+  })
+
+  function toLocalPoint(element, point) {
+    //Converts the point's html coordinates to svg coordinates
+
+    var svg = element.ownerSVGElement;
+    var globalPoint = point.matrixTransform(svg.getScreenCTM().inverse());
+    var globalToLocalMatrix = element.getTransformToElement(svg).inverse();
+    return globalPoint.matrixTransform(globalToLocalMatrix);
+  }
+
+  function do8() {
+    //Without moving the svg, move blue square top right to blue dot center
+    var svg = document.querySelector("#svg-container");
+    var dot = document.querySelector("#base1");
+    var square = document.querySelector("#pan1");
+
+    var rectSVG = svg.getBoundingClientRect();
+    var rectDot = dot.getBoundingClientRect();
+    var rectSquare = square.getBoundingClientRect();
+
+    //Create svg points for the matrix transform functions
+    var ptDot = svg.createSVGPoint();
+    var ptSquare = svg.createSVGPoint();
+
+    //Distance: From 0 to dot center in html coords
+    ptDot.x = 250;//rectDot.left + (rectDot.width/2) - rectSVG.left;
+    ptDot.y = 445;//rectDot.top - rectSVG.top;
+
+    console.log(rectDot);
+
+    //Distance: From square top right corner to svg top left corner in html coords
+    ptSquare.x = 250;//rectSquare.left + rectSquare.width - rectSVG.left;
+    ptSquare.y = 290;//rectSquare.top - rectSVG.top;
+
+    //Convert html coords to svg coords
+    var ptLclDot = toLocalPoint(square, ptDot); //From svg top left corner to dot center in svg coords
+    var ptLclSquare = toLocalPoint(square, ptSquare); //From square top right corner to svg top left corner in svg coords
+
+    //Get the distance between the 2 points
+   var x = ptLclDot.x - ptLclSquare.x;
+   var y = ptLclDot.y - ptLclSquare.y;
+
+    //Move the square
+    TweenLite.to(square, .5, {x: "+=" + x, y: "+=" + y});
+  }
+
+  function do9() {
+    //Without moving the svg, move blue square top right to blue dot center
+    var svg = document.querySelector("#svg-container");
+    var dot = document.querySelector("#base1");
+    var square = document.querySelector("#lechuga");
+
+    var rectSVG = svg.getBoundingClientRect();
+    var rectDot = dot.getBoundingClientRect();
+    var rectSquare = square.getBoundingClientRect();
+
+    //Create svg points for the matrix transform functions
+    var ptDot = svg.createSVGPoint();
+    var ptSquare = svg.createSVGPoint();
+
+    //Distance: From 0 to dot center in html coords
+    ptDot.x = 160;//rectDot.left + (rectDot.width/2) - rectSVG.left;
+    ptDot.y = 485;//rectDot.top - rectSVG.top;
+
+    console.log(rectDot);
+
+    //Distance: From square top right corner to svg top left corner in html coords
+    ptSquare.x = 250;//rectSquare.left + rectSquare.width - rectSVG.left;
+    ptSquare.y = 290;//rectSquare.top - rectSVG.top;
+
+    //Convert html coords to svg coords
+    var ptLclDot = toLocalPoint(square, ptDot); //From svg top left corner to dot center in svg coords
+    var ptLclSquare = toLocalPoint(square, ptSquare); //From square top right corner to svg top left corner in svg coords
+
+    //Get the distance between the 2 points
+   var x = ptLclDot.x - ptLclSquare.x;
+   var y = ptLclDot.y - ptLclSquare.y;
+
+    //Move the square
+    TweenLite.to(square, .5, {x: "+=" + x, y: "+=" + y});
+  }
+
+  function do10() {
+    //Without moving the svg, move blue square top right to blue dot center
+    var svg = document.querySelector("#svg-container");
+    var dot = document.querySelector("#base1");
+    var square = document.querySelector("#salami1");
+
+    var rectSVG = svg.getBoundingClientRect();
+    var rectDot = dot.getBoundingClientRect();
+    var rectSquare = square.getBoundingClientRect();
+
+    //Create svg points for the matrix transform functions
+    var ptDot = svg.createSVGPoint();
+    var ptSquare = svg.createSVGPoint();
+
+    //Distance: From 0 to dot center in html coords
+    ptDot.x = 160;//rectDot.left + (rectDot.width/2) - rectSVG.left;
+    ptDot.y = 425;//rectDot.top - rectSVG.top;
+
+    console.log(rectDot);
+
+    //Distance: From square top right corner to svg top left corner in html coords
+    ptSquare.x = 250;//rectSquare.left + rectSquare.width - rectSVG.left;
+    ptSquare.y = 290;//rectSquare.top - rectSVG.top;
+
+    //Convert html coords to svg coords
+    var ptLclDot = toLocalPoint(square, ptDot); //From svg top left corner to dot center in svg coords
+    var ptLclSquare = toLocalPoint(square, ptSquare); //From square top right corner to svg top left corner in svg coords
+
+    //Get the distance between the 2 points
+   var x = ptLclDot.x - ptLclSquare.x;
+   var y = ptLclDot.y - ptLclSquare.y;
+
+    //Move the square
+    TweenLite.to(square, .5, {x: "+=" + x, y: "+=" + y});
+  }
+
+
 });
