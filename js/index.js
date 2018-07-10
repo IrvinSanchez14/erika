@@ -221,14 +221,14 @@ $(document).ready(function() {
     }, 1000);
   });
 
-  $("#femenino").click(function(){
+  $(".femenino").click(function(){
     boton.play();
     setTimeout(function() {
       location.href = 'macha/index.html';
     }, 1000);
   });
 
-  $("#masculino").click(function(){
+  $(".masculino").click(function(){
     boton.play();
     setTimeout(function() {
       location.href = 'macho/index.html';
