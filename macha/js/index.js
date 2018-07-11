@@ -27,5 +27,17 @@ $(document).ready(function() {
     };
   });
 
+  $( ".cerrar" ).click(function() {
+    btnCerrar();
+  });
+
+  function btnCerrar(){
+    btn.play();
+    btn.onended = function () {
+                        location.href = '../cargando.html';
+    }
+
+  }
+
 
  });

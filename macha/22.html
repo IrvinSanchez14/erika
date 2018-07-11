@@ -41,7 +41,7 @@
                 margin-top: 0;
                 margin: 0;
                 padding: 0;
-            }  
+            }
             .svg-container {
                 width: 100vw;
                 height: 100vh;
@@ -73,10 +73,10 @@
         <g id="Nos-lavamos-los-dientes-22/24">
             <rect id="Background-Copy" fill="#FF5722" x="0" y="0" width="720" height="1283"></rect>
             <path d="M-73,965.673452 C260.758846,771.442183 623.425513,771.442183 1015,965.673452 C1015,1064.9471 1015,1223.49633 1015,1441.32114 L-73,1441.32114 L-73,965.673452 Z" id="Rectangle-7" fill="#741F71"></path>
-            <g id="settings_button-copy-2" transform="translate(611.000000, 0.000000)" fill="#7FD0D2">
+            <g id="settings_button-copy-2" class="cerrar" transform="translate(611.000000, 0.000000)" fill="#7FD0D2">
                 <path d="M1,0 L108,0 L108,107 C70.2732155,109.757984 42.4931566,102.22031 24.6598233,84.3869763 C6.82648997,66.553643 -1.0601178,38.4246509 1,0 Z" id="Rectangle"></path>
             </g>
-            <g id="noun_59751_cc-copy" transform="translate(672.641572, 48.641572) rotate(45.000000) translate(-672.641572, -48.641572) translate(645.494137, 21.141572)" fill-rule="nonzero" fill="#93278F">
+            <g id="noun_59751_cc-copy" class="cerrar" transform="translate(672.641572, 48.641572) rotate(45.000000) translate(-672.641572, -48.641572) translate(645.494137, 21.141572)" fill-rule="nonzero" fill="#93278F">
                 <g id="Group">
                     <path d="M46.0559239,8.59494565 C40.9606522,3.43451087 34.1597826,0.59125 26.9069565,0.59125 C19.7850543,0.59125 13.0708696,3.34782609 8.0025,8.35222826 C2.88630435,13.402663 0.0448369565,20.1419565 0.000597826087,27.3290217 C-0.0454347826,34.516087 2.7111413,41.2906522 7.75978261,46.4050543 C12.85625,51.5672826 19.6577174,54.40875 26.9105435,54.40875 C34.0324457,54.40875 40.7466304,51.6521739 45.8167935,46.6477717 C56.3732065,36.2204891 56.4796196,19.1495652 46.0559239,8.59494565 Z M43.2670652,44.065163 C38.8808152,48.396413 33.0717391,50.7811413 26.9105435,50.7811413 C20.6357609,50.7811413 14.7507609,48.3222826 10.3429891,43.8577174 C5.97228261,39.4326087 3.58815217,33.5703261 3.62701087,27.352337 C3.66766304,21.1343478 6.12652174,15.30375 10.5504348,10.9354348 C14.9366848,6.60418478 20.7457609,4.21945652 26.9069565,4.21945652 C33.1817391,4.21945652 39.0649457,6.67831522 43.4727174,11.1446739 C52.4933152,20.2764674 52.3994565,35.0439674 43.2670652,44.065163 Z" id="Shape"></path>
                     <path d="M36.8058594,26.2289364 L28.0659354,26.2289364 L28.0659354,17.4890123 C28.0659354,16.7864502 27.497434,16.2179487 26.7948718,16.2179487 C26.0923096,16.2179487 25.5238082,16.7864502 25.5238082,17.4890123 L25.5238082,26.2289364 L16.7838841,26.2289364 C16.0813219,26.2289364 15.5128205,26.7974378 15.5128205,27.5 C15.5128205,28.2025622 16.0813219,28.7710636 16.7838841,28.7710636 L25.5238082,28.7710636 L25.5238082,37.5109877 C25.5238082,38.2135498 26.0923096,38.7820513 26.7948718,38.7820513 C27.497434,38.7820513 28.0659354,38.2135498 28.0659354,37.5109877 L28.0659354,28.7714826 L36.8058594,28.7714826 C37.5084216,28.7714826 38.0769231,28.2029811 38.0769231,27.5004189 C38.077342,26.7974378 37.5084216,26.2289364 36.8058594,26.2289364 Z" id="Shape"></path>
@@ -121,10 +121,25 @@
             </div>
             </body>
             <script>
-                var fondo = new Audio('SONIDOS/FONDO.mp3');
-                var encenderAgua = new Audio('SONIDOS/22-dientes.m4a');
+            var cerrar = document.getElementsByClassName("cerrar");
+            for(var i = 0, j = cerrar.length; i < j; i++)
+            {
+              cerrar[i].addEventListener( "click", function() {
+                btnCerrar();
+              });
+            }
+            var boton = new Audio('../macho/SONIDOS/boton.m4a');
+            function btnCerrar(){
+              boton.play();
+              boton.onended = function () {
+                                  location.href = '../cargando.html';
+              }
+
+            }
+                var fondo = new Audio('../macho/SONIDOS/FONDO.mp3');
+                var encenderAgua = new Audio('sonidos/23bajocepillo.m4a');
                 fondo.addEventListener('ended', function() {
-                
+
                 this.currentTime = 0;
                 this.play();
             }, false);
@@ -133,7 +148,7 @@
             encenderAgua.play();
             document.getElementById("Oval-2-Do").addEventListener("click", btnMove);
             function btnMove() {
-                var elem = document.getElementById("hi");   
+                var elem = document.getElementById("hi");
                 document.getElementById("Oval-2-Do").style.animation = 'popup 3s  ease';
                 document.getElementById("doIt").style.animation = ' popup2 3s  ease';
                 setTimeout(
