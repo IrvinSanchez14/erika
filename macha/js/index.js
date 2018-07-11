@@ -16,7 +16,20 @@ $(document).ready(function() {
 
   FondoPlay();
 
-  $( "#btn_play" ).click(function() {
+  $( ".btn_play" ).click(function() {
+
+    var empezar = new Audio('sonidos/02empecemos.m4a');
+    btn.play();
+    btn.onended = function () {
+        empezar.play();
+    }
+    empezar.onended = function() {
+      location.href = 'encenderLuz.html';;
+    };
+  });
+
+  $( ".btn_play1" ).click(function() {
+    $('.btn_play1').css({fill :'741F71'});
     var empezar = new Audio('sonidos/02empecemos.m4a');
     btn.play();
     btn.onended = function () {

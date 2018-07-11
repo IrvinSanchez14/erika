@@ -24,6 +24,18 @@ $(document).ready(function() {
     fondo.play();
   }
 
+  $( ".cerrar" ).click(function() {
+    btnCerrar();
+  });
+
+  function btnCerrar(){
+    boton.play();
+    boton.onended = function () {
+                        location.href = 'cargando.html';
+    }
+
+  }
+
 
   function welcomeButtonAn() {
     $('#welcome-button').hover(function() {
